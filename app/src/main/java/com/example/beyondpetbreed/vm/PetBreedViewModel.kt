@@ -27,21 +27,17 @@ class PetBreedViewModel @Inject constructor(
             when(val result = repository.fetchPetBreed(name)) {
                 is Result.Error -> {
                     viewModelState.update {
-                        delay(4000)
                         it.copy(isLoading = false, screenState = PetScreenState.ErrorFound, errorMessage = result.exception.message ?:"Generic error")
                     }
                 }
                 is Result.Success -> {
                     viewModelState.update {
-                        delay(4000)
                         val petBreedList : PetBreed = result.data as PetBreed
-                        println("***** Result success: petBreedList is $petBreedList")
                         it.copy(isLoading = false, screenState = PetScreenState.BreedList, listOfPetBreeds = petBreedList.message)
                     }
                 }
                 is Result.ValidError -> {
                     viewModelState.update {
-                        delay(4000)
                         val petBreed = result.data as PetBreedError
                         it.copy(
                             isLoading = false,
