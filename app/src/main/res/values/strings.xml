@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BeyondPetBreed</string>
+    <string name="search_dog_by_breed">Search Dog by breed name</string>
+    <string name="loading">Loading…</string>
+    <string name="search">Search</string>
+    <string name="breed_name">Breed name</string>
+</resources>
